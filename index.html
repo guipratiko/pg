@@ -176,21 +176,12 @@
       width: 100%;
       max-width: 400px;
       margin: 0 auto 1.5rem;
-      padding-bottom: 177.78%;
-      height: 0;
+      aspect-ratio: 9 / 16;
       border-radius: var(--radius-md);
       overflow: hidden;
       background: #000;
     }
-    .hero__video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
+    .hero__video { width: 100%; height: 100%; border: none; }
     .hero__card {
       background: rgba(5, 5, 7, 0.9);
       border-radius: var(--radius-md);
@@ -524,6 +515,7 @@
       -ms-overflow-style: none;
       padding: 0 2rem;
       cursor: grab;
+      user-select: none;
     }
     .video-testimonials-carousel::-webkit-scrollbar {
       display: none;
@@ -549,12 +541,13 @@
     }
     .video-item iframe {
       width: 100%;
-      height: 100%;
+      height: 120%;
       border: none;
       display: block;
       position: absolute;
-      top: 0;
+      top: -10%;
       left: 0;
+      object-fit: cover;
       pointer-events: auto;
     }
     
@@ -706,10 +699,10 @@
             <div class="hero__video-container">
               <iframe
                 class="hero__video"
-                src="https://www.youtube.com/embed/QSYeEKxzBu8?rel=0&modestbranding=1"
+                src="https://www.youtube.com/embed/QSYeEKxzBu8?controls=1&modestbranding=1&rel=0&iv_load_policy=3"
                 title="Vídeo de apresentação do curso Frango Atropelado"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
                 loading="lazy"
               ></iframe>
@@ -799,31 +792,31 @@
       <div class="video-testimonials-carousel-wrapper">
         <div class="video-testimonials-carousel" id="videoCarousel">
           <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/CCVlAbIU-Po" title="Depoimento 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/CCVlAbIU-Po?mute=1&controls=1&modestbranding=1&rel=0&playsinline=1" title="Depoimento 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/auZVcqNrCoI" title="Depoimento 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/auZVcqNrCoI?mute=1&controls=1&modestbranding=1&rel=0&playsinline=1" title="Depoimento 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/XDQQeOwhoSk" title="Depoimento 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/XDQQeOwhoSk?mute=1&controls=1&modestbranding=1&rel=0&playsinline=1" title="Depoimento 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/R7qeGsklZBw" title="Depoimento 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/R7qeGsklZBw?mute=1&controls=1&modestbranding=1&rel=0&playsinline=1" title="Depoimento 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/1L_-T1LTd1s" title="Depoimento 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/1L_-T1LTd1s?mute=1&controls=1&modestbranding=1&rel=0&playsinline=1" title="Depoimento 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/l98PgdCeLew" title="Depoimento 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/l98PgdCeLew?mute=1&controls=1&modestbranding=1&rel=0&playsinline=1" title="Depoimento 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/pKhanqE3FqQ" title="Depoimento 7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/pKhanqE3FqQ?mute=1&controls=1&modestbranding=1&rel=0&playsinline=1" title="Depoimento 7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/mZysisBl4xs" title="Depoimento 8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/mZysisBl4xs?mute=1&controls=1&modestbranding=1&rel=0&playsinline=1" title="Depoimento 8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/ZdBe-Zx-OCA" title="Depoimento 9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/ZdBe-Zx-OCA?mute=1&controls=1&modestbranding=1&rel=0&playsinline=1" title="Depoimento 9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
         </div>
       </div>
@@ -1080,7 +1073,6 @@
       let scrollLeft;
 
       carousel.addEventListener('mousedown', (e) => {
-        if (e.target.tagName === 'IFRAME') return;
         isDown = true;
         carousel.style.cursor = 'grabbing';
         startX = e.pageX - carousel.offsetLeft;
@@ -1110,13 +1102,12 @@
       let touchScrollLeft = 0;
 
       carousel.addEventListener('touchstart', (e) => {
-        if (e.target.tagName === 'IFRAME') return;
         touchStartX = e.touches[0].pageX - carousel.offsetLeft;
         touchScrollLeft = carousel.scrollLeft;
       });
 
       carousel.addEventListener('touchmove', (e) => {
-        if (!touchStartX || e.target.tagName === 'IFRAME') return;
+        if (!touchStartX) return;
         const x = e.touches[0].pageX - carousel.offsetLeft;
         const walk = (x - touchStartX) * 2;
         carousel.scrollLeft = touchScrollLeft - walk;
