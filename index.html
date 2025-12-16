@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso Frango Atropelado Prátiko | Black Friday</title>
+  <meta name="description" content="Aprenda a desossar, rechear e vender o frango atropelado que viralizou no Brasil. Curso prático com planilha de precificação e bônus de Black Friday.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-card: rgba(255, 255, 255, 0.1);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.85);
+      --accent: #ff3333;
+      --accent-gold: #ffd700;
+      --accent-gold-bright: #ffed4e;
+      --accent-orange: #ff8c42;
+      --success: #00ff88;
+      --radius-lg: 32px;
+      --radius-md: 20px;
+      --radius-sm: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 10% 20%, rgba(255, 51, 51, 0.25), transparent 40%),
+                  radial-gradient(circle at 80% 0%, rgba(255, 215, 0, 0.2), transparent 35%);
+      z-index: -2;
+    }
+    .page { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; padding-bottom: 4rem; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    
+    /* Buttons */
+    .btn {
+      border: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn--primary {
+      background: linear-gradient(135deg, #ff3333, #ff6b6b, #ff8c42);
+      color: #fff;
+      box-shadow: 0 10px 40px rgba(255, 51, 51, 0.5), 0 0 30px rgba(255, 215, 0, 0.3);
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      font-weight: 700;
+      animation: pulseGlow 2s ease-in-out infinite;
+    }
+    .btn--primary:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 20px 60px rgba(255, 51, 51, 0.7);
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 10px 40px rgba(255, 51, 51, 0.6), 0 0 30px rgba(255, 215, 0, 0.4); }
+      50% { box-shadow: 0 15px 50px rgba(255, 51, 51, 0.8), 0 0 40px rgba(255, 215, 0, 0.6); }
+    }
+    
+    /* Sections */
+    .section { padding: 5rem 0; }
+    .section.compact { padding: 3rem 0; }
+    .section-header { text-align: center; max-width: 720px; margin: 0 auto 3rem; }
+    .section-tag {
+      font-size: 0.9rem;
+      letter-spacing: 0.25em;
+      font-weight: 700;
+      color: var(--accent-gold-bright);
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-weight: 800;
+      margin: 0.8rem 0;
+      background: linear-gradient(135deg, #ffffff, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-description { color: var(--text-secondary); font-size: 1.1rem; }
+    
+    /* Hero */
+    .hero { padding: 4rem 0; }
+    .hero__pre-banner { text-align: center; margin-bottom: 2rem; padding: 0 1rem; }
+    .hero__pre-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ffffff, #ffd700, #ff8c42);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero__banner-wrapper {
+      width: 100%;
+      margin: 0 auto 2rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 51, 51, 0.3);
+      border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+    .hero__post-banner { text-align: center; margin-bottom: 3rem; padding: 0 1rem; }
+    .hero__cta-banner { font-size: 1.2rem; padding: 1.3rem 2.5rem; min-width: 320px; }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .hero__badge {
+      display: inline-flex;
+      background: linear-gradient(135deg, rgba(255, 51, 51, 0.3), rgba(255, 140, 66, 0.2));
+      color: var(--accent-gold-bright);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+    }
+    .hero__title {
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      font-weight: 900;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(135deg, #ffffff, #ffd700, #ff8c42);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+    .hero__lead { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .hero__actions { margin-bottom: 2rem; }
+    .hero__stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .hero__stat {
+      padding: 1.2rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .hero__stat strong { display: block; font-size: 1.7rem; font-family: 'Montserrat', sans-serif; }
+    .hero__visual {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .hero__video-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 1.5rem;
+      padding-bottom: 177.78%;
+      height: 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #000;
+    }
+    .hero__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .hero__card {
+      background: rgba(5, 5, 7, 0.9);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      margin-bottom: 1.5rem;
+    }
+    .hero__card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.1rem;
+      color: var(--accent-gold);
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+    .check-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: rgba(45, 212, 191, 0.2);
+      color: var(--success);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .trust-badges span {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    /* Value Grid */
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+    .value-card {
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 2px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      min-height: 220px;
+    }
+    .value-card::after {
+      content: attr(data-icon);
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, rgba(255, 51, 51, 0.3), rgba(255, 215, 0, 0.3));
+      color: var(--accent-gold-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      border: 2px solid rgba(255, 215, 0, 0.4);
+    }
+    .value-card h3 {
+      margin: 0 0 1rem;
+      font-size: 1.3rem;
+      padding-right: 4rem;
+    }
+    .value-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0;
+    }
+    
+    /* Steps */
+    .steps__list {
+      display: grid;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .step-card {
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      padding-left: 8rem;
+    }
+    .step-card::before {
+      content: attr(data-step);
+      position: absolute;
+      left: 1.5rem;
+      top: 2rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+    }
+    .step-card h4 {
+      margin: 0 0 0.6rem;
+      font-size: 1.3rem;
+    }
+    .step-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    /* Plans */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .plan-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .plan-card--featured { border-color: rgba(0, 255, 136, 0.3); }
+    .plan-badge {
+      position: absolute;
+      top: -0.75rem;
+      left: 1.5rem;
+      background: linear-gradient(135deg, #00ff88, #00cc6a);
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+    }
+    .plan-title {
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      color: #000;
+      padding: 0.8rem 1.2rem;
+      border-radius: var(--radius-sm);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 0 0 1rem 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .plan-description {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .plan-features-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+    .plan-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .plan-features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .plan-features-list li svg {
+      color: var(--accent-gold-bright);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+    .plan-bonus {
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    .plan-bonus-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-gold-bright);
+      font-weight: 700;
+    }
+    .plan-pricing {
+      text-align: center;
+      margin: 1.5rem 0;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .plan-old-price {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      text-decoration: line-through;
+      margin-bottom: 0.5rem;
+    }
+    .plan-price-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    .plan-price {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .plan-cta {
+      width: 100%;
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      color: #000;
+      font-weight: 700;
+      padding: 1.2rem 2rem;
+      border: none;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+    }
+    .plan-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+    }
+    
+    /* Guarantee */
+    .guarantee-section {
+      padding: 3rem 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .guarantee-card {
+      background: linear-gradient(135deg, rgba(0, 255, 136, 0.15), rgba(45, 212, 191, 0.1));
+      border: 2px solid rgba(0, 255, 136, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+    }
+    .guarantee-icon {
+      flex-shrink: 0;
+      color: var(--success);
+    }
+    .guarantee-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 1rem 0;
+    }
+    .guarantee-badge {
+      background: linear-gradient(135deg, var(--success), #20b2aa);
+      color: #000;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+    .guarantee-days {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--success), #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .guarantee-description {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin: 0 0 1.5rem 0;
+    }
+    .guarantee-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .guarantee-features span {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    
+    /* Video Testimonials Carousel */
+    .video-testimonials-carousel-wrapper {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 3rem 0;
+      padding: 2rem 0;
+    }
+    .video-testimonials-carousel {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 0 2rem;
+      cursor: grab;
+    }
+    .video-testimonials-carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .video-testimonials-carousel:active {
+      cursor: grabbing;
+    }
+    .video-item {
+      width: 350px;
+      height: 622px;
+      flex-shrink: 0;
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #000;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .video-item:hover {
+      transform: scale(1.05);
+      border-color: var(--accent-gold);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 51, 51, 0.2);
+    }
+    .video-item iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: auto;
+    }
+    
+    /* Testimonials */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.3rem;
+    }
+    .testimonial-card {
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .testimonial-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .testimonial-card strong {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    .testimonial-card span {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    
+    /* FAQ */
+    .faq-list {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .faq-item {
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.3rem 1.5rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .faq-item h4 {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
+    }
+    .faq-item p {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .support-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      min-width: 200px;
+      justify-content: center;
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero__grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero__cta-banner { min-width: auto; width: 100%; font-size: 1rem; padding: 1.1rem 2rem; }
+      .value-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .plans-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .step-card { padding-left: 2rem; }
+      .step-card::before { position: relative; left: 0; top: 0; margin-bottom: 0.5rem; display: block; }
+      .guarantee-card { flex-direction: column; padding: 2rem 1.5rem; gap: 1.5rem; text-align: center; }
+      .guarantee-title { justify-content: center; flex-direction: column; }
+      .video-testimonials-carousel-wrapper { margin: 2rem 0; padding: 1.5rem 0; }
+      .video-testimonials-carousel { gap: 1.5rem; padding: 0 1rem; }
+      .video-item { width: 280px; height: 498px; }
+    }
+    @media (max-width: 480px) {
+      .value-grid { grid-template-columns: 1fr; }
+      .value-card::after { position: relative; top: 0; right: 0; margin-bottom: 1rem; display: inline-flex; }
+      .value-card h3 { padding-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Hero Section -->
+    <header class="hero" id="inicio">
+      <div class="hero__pre-banner">
+        <h2 class="hero__pre-title">
+          O Frango Desossado e Recheado Que Nos Fez Vender 3 Toneladas em Uma Semana — Agora Você Pode Aprender!
+        </h2>
+      </div>
+      <div class="hero__banner-wrapper">
+        <img src="banner.png" alt="Frango Atropelado" class="hero__banner" loading="eager">
+      </div>
+      <div class="hero__post-banner">
+        <button class="btn btn--primary hero__cta-banner" onclick="scrollToPlans()">
+          QUERO GARANTIR MINHA VAGA AGORA
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg>
+        </button>
+      </div>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <div class="hero__badge">
+            Oferta Relâmpago • Válida por tempo limitado • Cupom ATROPELADO10 dá 10% de desconto
+          </div>
+          <h1 class="hero__title">
+            PARE DE VENDER FRANGO COMUM: Aprenda a Produzir o <span>Frango Atropelado Mais Vendido e Lucrativo do Brasil</span>
+          </h1>
+          <p class="hero__lead">
+            O método simples que transforma um frango de <strong>R$11,99/kg</strong> em uma máquina de lucro de <strong>R$39,99/kg</strong>. Validado por centenas de empreendedores!
+          </p>
+          <div class="hero__actions">
+            <button class="btn btn--primary" onclick="scrollToPlans()">
+              QUERO TRANSFORMAR MINHA RENDA AGORA
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></svg>
+            </button>
+          </div>
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <strong>1º curso</strong>
+              <span>Frango Atropelado do Brasil</span>
+            </div>
+            <div class="hero__stat">
+              <strong>1h+</strong>
+              <span>Conteúdo Rápido e prático</span>
+            </div>
+            <div class="hero__stat">
+              <strong>Planilha</strong>
+              <span>Precificação inteligente</span>
+            </div>
+            <div class="hero__stat">
+              <strong>Suporte</strong>
+              <span>Tira-dúvidas rápido</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__video-wrapper">
+            <div class="hero__video-container">
+              <iframe
+                class="hero__video"
+                src="https://www.youtube.com/embed/QSYeEKxzBu8?rel=0&modestbranding=1"
+                title="Vídeo de apresentação do curso Frango Atropelado"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+          <div class="hero__card">
+            <h3>Dentro do curso</h3>
+            <div class="hero__checklist">
+              <p class="check-item">
+                <span class="check-icon">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8.5 6.5 11l5.5-6"/></svg>
+                </span>
+                Técnica de desossa sem desperdício
+              </p>
+              <p class="check-item">
+                <span class="check-icon">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8.5 6.5 11l5.5-6"/></svg>
+                </span>
+                Recheios exclusivos e saborosos
+              </p>
+              <p class="check-item">
+                <span class="check-icon">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8.5 6.5 11l5.5-6"/></svg>
+                </span>
+                Amarração segura e bonita
+              </p>
+              <p class="check-item">
+                <span class="check-icon">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8.5 6.5 11l5.5-6"/></svg>
+                </span>
+                Truques de forno para dourar por igual
+              </p>
+            </div>
+          </div>
+          <div class="trust-badges">
+            <span>Pagamento 100% seguro</span>
+            <span>Acesso imediato ao curso</span>
+            <span>Garantia de 7 dias</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Value Grid -->
+    <section class="section" id="beneficios">
+      <div class="section-header">
+        <p class="section-tag">Por que escolher</p>
+        <h2 class="section-title">🚀 Por Que o Frango Atropelado Vai Multiplicar Seu Lucro?</h2>
+      </div>
+      <div class="value-grid">
+        <article class="value-card" data-icon="01">
+          <h3>Lucre de 2x a 5x por Unidade</h3>
+          <p>Sua margem de lucro nunca mais será a mesma. Venda com preço premium por um produto premium.</p>
+        </article>
+        <article class="value-card" data-icon="02">
+          <h3>Receita Rápida e Simples</h3>
+          <p>O preparo é incrivelmente fácil e otimizado para produção em escala.</p>
+        </article>
+        <article class="value-card" data-icon="03">
+          <h3>Baixo Custo de Implementação</h3>
+          <p>Da para fazer com equipamentos mais simples e também industriais</p>
+        </article>
+        <article class="value-card" data-icon="04">
+          <h3>Alta Aceitação e Demanda Imediata</h3>
+          <p>É o tempero, é a crocância, e a suculência! Seu público vai amar o frango atropelado</p>
+        </article>
+        <article class="value-card" data-icon="05">
+          <h3>Método Validado e Comprovado</h3>
+          <p>Receita que já gerou toneladas de vendas</p>
+        </article>
+        <article class="value-card" data-icon="06">
+          <h3>Suporte Exclusivo (Bônus)</h3>
+          <p>Não fique sozinho! Tenha acesso direto a quem mais entende do negócio para tirar todas as suas dúvidas.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Video Testimonials -->
+    <section class="section" id="depoimentos-video">
+      <div class="section-header">
+        <p class="section-tag">Quem compra, aprova</p>
+        <h2 class="section-title">Veja o que nossos alunos estão falando</h2>
+        <p class="section-description">
+          Depoimentos reais de pessoas que já comeram o produto
+        </p>
+      </div>
+      <div class="video-testimonials-carousel-wrapper">
+        <div class="video-testimonials-carousel" id="videoCarousel">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/CCVlAbIU-Po" title="Depoimento 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/auZVcqNrCoI" title="Depoimento 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/XDQQeOwhoSk" title="Depoimento 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/R7qeGsklZBw" title="Depoimento 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/1L_-T1LTd1s" title="Depoimento 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/l98PgdCeLew" title="Depoimento 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/pKhanqE3FqQ" title="Depoimento 7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/mZysisBl4xs" title="Depoimento 8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/ZdBe-Zx-OCA" title="Depoimento 9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="section compact" id="conteudo">
+      <div class="section-header">
+        <p class="section-tag">Como funciona</p>
+        <h2 class="section-title">🎯 Da Produção ao Lucro: Como o Método "Frango Atropelado" Funciona</h2>
+        <p class="section-description">
+          Neste curso, você não vai apenas aprender uma receita. Você vai dominar um Processo de Produção completo, desde a escolha dos ingredientes até o produto pronto para consumo! Mostramos segredo dos temperos e dicas estratégicas
+        </p>
+      </div>
+      <div class="section-header">
+        <h3 class="section-title" style="font-size: 1.8rem; margin-top: 2rem;">
+          Como Funciona em 5 Passos Simples:
+        </h3>
+      </div>
+      <div class="steps__list">
+        <article class="step-card" data-step="ETAPA 01">
+          <h4>Segredo da desossa</h4>
+          <p>Aprenda a desossar, com todos os detalhes que precisa saber, vídeo aula em alta definição para você não perder nenhum detalhe</p>
+        </article>
+        <article class="step-card" data-step="ETAPA 02">
+          <h4>Segredo dos ingredientes</h4>
+          <p>Veja quais ingredientes usar, como prepará-los e um bônus com sugestões extras de ingredientes</p>
+        </article>
+        <article class="step-card" data-step="ETAPA 03">
+          <h4>Os cuidados com o recheamento</h4>
+          <p>Aprenda os cuidados e detalhes que fazem a diferença em uma amarração firme e que vai trazer uma boa estética ao seu produto.</p>
+        </article>
+        <article class="step-card" data-step="ETAPA 04">
+          <h4>Assamento</h4>
+          <p>Aprenda tudo que precisa para o produto ficar na suculência perfeita por dentro e crocância irresistível por fora</p>
+        </article>
+        <article class="step-card" data-step="ETAPA 05">
+          <h4>Precificação</h4>
+          <p>Com uma planilha disponível no plano profissional, você consegue calcular o custo exato do seu produto, garantindo lucro na sua operação!</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee-section">
+      <div class="guarantee-card">
+        <div class="guarantee-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="guarantee-content">
+          <h3 class="guarantee-title">
+            <span class="guarantee-badge">Garantia Incondicional</span>
+            <span class="guarantee-days">7 Dias</span>
+          </h3>
+          <p class="guarantee-description">
+            Teste o curso completo por 7 dias. Se não ficar satisfeito, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. Sua satisfação é nossa garantia.
+          </p>
+          <div class="guarantee-features">
+            <span>✓ Devolução total</span>
+            <span>✓ Sem perguntas</span>
+            <span>✓ Processo rápido</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section class="section" id="planos">
+      <div class="section-header">
+        <p class="section-tag">Oferta Relâmpago</p>
+        <h2 class="section-title">🔥 OFERTA RELÂMPAGO: Garanta Seu Lucro Extra Hoje!</h2>
+        <p class="section-description">Escolha o plano que mais te atende!</p>
+      </div>
+      <div class="plans-grid" id="botoes-compra">
+        <div class="plan-card plan-card--featured">
+          <div class="plan-badge">
+            <span>⭐</span> O mais vendido!!
+          </div>
+          <div class="plan-header">
+            <h3 class="plan-title">Plano Profissional</h3>
+          </div>
+          <p class="plan-description">
+            Perfeito pra quem quer transformar a receita em renda extra ou um negócio e lucrar muito nesse fim de ano!
+          </p>
+          <div class="plan-features">
+            <p class="plan-features-title">Inclui tudo do plano básico, mais:</p>
+            <ul class="plan-features-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8.5 6.5 11l5.5-6"/></svg>
+                Preparo do recheio em larga escala
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8.5 6.5 11l5.5-6"/></svg>
+                Dicas para otimizar sua produção e vender mais
+              </li>
+            </ul>
+            <div class="plan-bonus">
+              <div class="plan-bonus-header">
+                <span>🎁</span>
+                <strong>Bônus exclusivo!</strong>
+              </div>
+              <p class="plan-bonus-text">
+                Planilha exclusiva para calcular o custo e precificar seu produto
+              </p>
+            </div>
+          </div>
+          <div class="plan-pricing">
+            <p class="plan-old-price">R$ 199,00</p>
+            <p class="plan-price-label">por apenas</p>
+            <p class="plan-price">R$ 147,00</p>
+          </div>
+          <a class="plan-cta" href="https://pay.hotmart.com/E102965918R?bid=1764008829512" target="_blank" rel="noreferrer">
+            Quero comprar agora!
+          </a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-header">
+            <h3 class="plan-title">Plano Básico</h3>
+          </div>
+          <p class="plan-description">
+            Ideal pra quem quer aprender a fazer o frango atropelado perfeito em casa.
+          </p>
+          <div class="plan-features">
+            <p class="plan-features-title">Incluso no plano:</p>
+            <ul class="plan-features-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8.5 6.5 11l5.5-6"/></svg>
+                Passo a passo de como desossar o frango;
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8.5 6.5 11l5.5-6"/></svg>
+                Lista completa de ingredientes;
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8.5 6.5 11l5.5-6"/></svg>
+                Como rechear e amarrar corretamente;
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8.5 6.5 11l5.5-6"/></svg>
+                Dicas e cuidados no assamento;
+              </li>
+            </ul>
+          </div>
+          <div class="plan-pricing">
+            <p class="plan-old-price">R$ 147,00</p>
+            <p class="plan-price-label">por apenas</p>
+            <p class="plan-price">R$ 97,00</p>
+          </div>
+          <a class="plan-cta" href="https://pay.hotmart.com/W102963624U?bid=1764008828900" target="_blank" rel="noreferrer">
+            Quero comprar agora!
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section compact" id="prova-social">
+      <div class="section-header">
+        <p class="section-tag">Quem compra aprova</p>
+        <h2 class="section-title">Clientes que vendem tudo que produzem</h2>
+        <p class="section-description">
+          Cada depoimento vem de alunos que aplicaram a técnica e viram o frango atropelado se tornar o prato mais elogiado do cardápio.
+        </p>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <p>"Comecei a vender no meu bairro com o plano profissional e fechei 40 encomendas só no Natal. O recheio em larga escala salvou meu tempo."</p>
+          <strong>Camila Rocha</strong>
+          <span>Empreendedora em Goiânia</span>
+        </article>
+        <article class="testimonial-card">
+          <p>"Sempre tive medo de desossar. Depois do módulo 1 fiz meu primeiro frango completo em menos de 20 minutos."</p>
+          <strong>João Mendes</strong>
+          <span>Chef em confrarias particulares</span>
+        </article>
+        <article class="testimonial-card">
+          <p>"A planilha de precificação abriu meus olhos. Hoje sei exatamente quanto cobrar sem perder dinheiro."</p>
+          <strong>Patrícia Alves</strong>
+          <span>Empresario no ramo do frango assado</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section compact" id="faq">
+      <div class="section-header">
+        <p class="section-tag">Dúvidas comuns</p>
+        <h2 class="section-title">❓ Dúvidas Comuns (E Nossas Respostas Sinceras)</h2>
+      </div>
+      <div class="faq-list">
+        <article class="faq-item">
+          <h4>Eu não sei cozinhar. O curso serve para mim?</h4>
+          <p>Sim! O método é passo a passo e ensinado do zero, ideal tanto para iniciantes quanto para chefs.</p>
+        </article>
+        <article class="faq-item">
+          <h4>Funciona para quem já tem açougue/supermercado?</h4>
+          <p>Com certeza. É uma forma de aumentar o ticket médio, atrair novos clientes e se diferenciar da concorrência.</p>
+        </article>
+        <article class="faq-item">
+          <h4>Como terei acesso ao conteúdo?</h4>
+          <p>A compra é realizada por meio de um link da plataforma Hotmart. Após a confirmação do pagamento, o acesso ao curso é liberado online, as aulas podem ser assistidas quando quiser, no seu tempo e as planilhas de custo e ingredientes de recheios baixadas para seu celular/computador</p>
+        </article>
+        <article class="faq-item">
+          <h4>Quanto tempo dura o curso e terei acesso por quanto tempo?</h4>
+          <p>Plano básico 27 min e profissional 1hora</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <a href="https://wa.me/5562985824605?text=Olá! Preciso de suporte sobre o curso de Frango Atropelado" target="_blank" rel="noreferrer" class="btn btn--primary support-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Suporte
+      </a>
+      <p style="margin-top: 2rem;">
+        © 2025 Prátiko Supermercados • Curso Frango Atropelado de Sucesso
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function scrollToPlans() {
+      const botoesCompra = document.getElementById('botoes-compra');
+      if (botoesCompra) {
+        const elementRect = botoesCompra.getBoundingClientRect();
+        const absoluteElementTop = elementRect.top + window.pageYOffset;
+        const middle = absoluteElementTop - window.innerHeight / 2 + elementRect.height / 2;
+        window.scrollTo({ top: middle, behavior: 'smooth' });
+        return;
+      }
+      const planosSection = document.getElementById('planos');
+      if (planosSection) {
+        const elementRect = planosSection.getBoundingClientRect();
+        const absoluteElementTop = elementRect.top + window.pageYOffset;
+        const middle = absoluteElementTop - window.innerHeight / 2 + elementRect.height / 2;
+        window.scrollTo({ top: middle, behavior: 'smooth' });
+      }
+    }
+
+    // Carrossel de vídeos - drag to scroll
+    (function() {
+      const carousel = document.getElementById('videoCarousel');
+      if (!carousel) return;
+
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      carousel.addEventListener('mousedown', (e) => {
+        if (e.target.tagName === 'IFRAME') return;
+        isDown = true;
+        carousel.style.cursor = 'grabbing';
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+
+      carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+      });
+
+      carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+      });
+
+      carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+
+      // Touch events para mobile
+      let touchStartX = 0;
+      let touchScrollLeft = 0;
+
+      carousel.addEventListener('touchstart', (e) => {
+        if (e.target.tagName === 'IFRAME') return;
+        touchStartX = e.touches[0].pageX - carousel.offsetLeft;
+        touchScrollLeft = carousel.scrollLeft;
+      });
+
+      carousel.addEventListener('touchmove', (e) => {
+        if (!touchStartX || e.target.tagName === 'IFRAME') return;
+        const x = e.touches[0].pageX - carousel.offsetLeft;
+        const walk = (x - touchStartX) * 2;
+        carousel.scrollLeft = touchScrollLeft - walk;
+      });
+    })();
+  </script>
+</body>
+</html>
+
